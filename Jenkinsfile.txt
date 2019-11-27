@@ -18,7 +18,17 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-				echo 'Testing..'
+				withMaven( maven: 'apache-maven-3.6.2') {
+						bat "mvn test "
+				}
+            }
+        }
+		 stage('Package') {
+            steps {
+                echo 'Packaging..'
+				withMaven( maven: 'apache-maven-3.6.2') {
+						bat "mvn package "
+				}
             }
         }
         stage('Deploy') {
