@@ -1,10 +1,5 @@
 pipeline {
     agent any
-	tools {
-        maven 'apache-maven-3.6.2'
-		jdk 'jdk8'
-
-    }
     stages {
 
 		stage('SCM') {
@@ -14,9 +9,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-				
 				echo 'Building..'
-			
+				withMaven( maven: 'apache-maven-3.6.2'
+					) {
+						bat "mvn clean install"
+				} 
             }
         }
         stage('Test') {
