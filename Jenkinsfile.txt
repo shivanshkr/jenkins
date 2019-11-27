@@ -13,7 +13,7 @@ pipeline {
 
 		stage('SCM') {
             steps {
-				git 'https://github.com/shivanshkr/maven-webapp.git'
+				git 'https://github.com/shivanshkr/jenkins.git'
             }
         }
         stage('Build') {
