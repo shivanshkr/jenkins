@@ -26,7 +26,7 @@ pipeline {
 		 stage('Package') {
             steps {
                 echo 'Packaging..'
-				withMaven( ) {
+				withMaven( maven: 'apache-maven-3.6.2') {
 						bat "mvn package "
 				}
             }
@@ -34,6 +34,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+				withMaven( maven: 'apache-maven-3.6.2') {
+						bat "mvn deploy "
+				}
             }
         }
     }
