@@ -60,6 +60,12 @@ pipeline {
 				)
             }
         }
+		stage('Archive'){
+			steps{
+				echo 'Archiving.... '
+				archiveArtifacts '**'
+			}
+		}
     }
 	
 }
