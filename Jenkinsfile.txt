@@ -5,7 +5,7 @@ pipeline {
 		ARTIFACTID = readMavenPom().getArtifactId()
 		VERSION = readMavenPom().getVersion()
 		PACKAGING = readMavenPom().getPackaging()
-		GROUPID = readMavenPom().getGeoupId()
+		GROUPID = readMavenPom().getGroupId()
 		
 	}
 	
