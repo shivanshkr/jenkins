@@ -34,7 +34,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying.... '
-				nexusArtifactUploader artifacts: [[artifactId: '${POM_ARTIFACTID}', classifier: '', file: 'target\\demo.war', type: '${POM_PACKAGING}']], credentialsId: '1431b1bf-5b26-4599-ba2b-481b76097d07', groupId: '${POM_GROUPID}', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'demo', version: '${POM_VERSION}'
+				nexusArtifactUploader artifacts: [[artifactId: '${POM_ARTIFACTID}', classifier: '', file: 'target\\maven-webapp.war', type: '${POM_PACKAGING}']], credentialsId: '1431b1bf-5b26-4599-ba2b-481b76097d07', groupId: '${POM_GROUPID}', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'demo', version: '${POM_VERSION}'
             }
         }
     }
