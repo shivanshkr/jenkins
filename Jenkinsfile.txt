@@ -10,9 +10,8 @@ pipeline {
         stage('Build') {
             steps {
 				echo 'Building..'
-				withMaven( maven: 'apache-maven-3.6.2'
-					) {
-						bat "mvn clean install"
+				withMaven() {
+						bat "mvn clean complie"
 				} 
             }
         }
