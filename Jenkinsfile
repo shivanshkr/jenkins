@@ -48,11 +48,7 @@ pipeline {
 						[artifactId: "${ARTIFACTID}", 
 						classifier: '', 
 						file: 'target\\maven-webapp.war', 
-						type: "${PACKAGING}" ],
-						[artifactId: "${ARTIFACTID}", 
-						classifier: '', 
-						file: 'pom.xml', 
-						type: "pom" ]
+						type: "${PACKAGING}" ]
 					], 
 					credentialsId: '1431b1bf-5b26-4599-ba2b-481b76097d07', 
 					groupId: "${GROUPID}", 
